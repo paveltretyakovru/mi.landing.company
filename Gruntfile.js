@@ -7,8 +7,8 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 3777 ,
-          host : 'mi.dev' ,
+          port: 3778 ,
+          host : 'micom.dev' ,
           base : 'public'
         }
       }
@@ -30,6 +30,9 @@ module.exports = function(grunt) {
 
     sass: {
       dist: {
+        options : {
+          compass : true
+        } ,
         files: [{
           expand: true,
           cwd: 'source/sass',
