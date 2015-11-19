@@ -1,101 +1,13 @@
+// Core
 @import "compass";
 @import "compass/css3/opacity";
 @import "compass/css3/text-shadow";
 
-// Colors
-$color-violet 			 : #9C6FE7;
-$color-violet-light		 : rgba(156,111,231,0.25);
-$color-violet-dark		 : #7D59B9;
-$color-white 			 : #fff;
-$color-graywhite		 : #F8F8F8;
-$color-violet-light-very : #CBB5F2;
-$color-red-orange 		 : #F45151;
-$color-red-orange-dark 	 : #CE3D36;
-
-$default-text-shadow-color: #575757;
-$default-text-shadow-blur: 3px;
-$default-text-shadow-v-offset: 1px;
-
-// Fonts
-$muller 		: "Muller";
-$muller_black	: "Muller Black";
-$muller_regular	: "Muller Regular";
-$muller_medium 	: "Muller Medium";
-$muller_light 	: "Muller Light";
-
-html { font-size: 62.5% }
-html , body { height : 100%; width : 100% }
-body { font	: normal normal 300 1.25rem/1.5 $muller_light; font-size : 18px }
-
-h1 , h3 { text-transform : uppercase; letter-spacing: 3px; }
-h1 		{ font-size : 32px }
-
-article , fieldset { text-align : center }
-
-// ###################################################################
-// Buttons
-.mi-button-default{
-	background 		: none;
-	color 			: $color-violet	;
-	border-radius 	: 60px;
-	border 			: 2px solid $color-violet-light	;
-	padding 		: 8px 16px;
-	cursor 			: pointer 	;
-	height 			: 48px;
-	width 			: 240px;
-	font-family 	: $muller_medium;
-	font-size 		: 10px;
-	letter-spacing 	: 1.5px;
-	text-transform 	: uppercase;
-
-	-webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) ;
-	-moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) ;
-	-o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) ;
-	transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000)
-}
-.mi-button-default:hover{ background : #9C6FE7;	color : $color-white; border : 2px solid $color-violet}
-button { @extend .mi-button-default }
-
-.button-red {
-	@extend .mi-button-default;
-	color 		 	: $color-white;
-	background-color: $color-red-orange;
-	border-bottom 	: 4px solid $color-red-orange-dark;
-}
-
-.button-white-border {
-	@extend .mi-button-default;
-	border-color 		: rgba(255, 255, 255, 0.3);
-	color 		 		: $color-white;
-	border-color 		: rgba(255, 255, 255, 0.3);
-}
-
-// ################## Section templates #####################
-
-// Секция с фиолетовым фоном и белыми буквами
-.violet-section {
-	color 				: $color-white;
-	background-color 	: $color-violet !important;
-	
-	@include single-text-shadow;
-	p { @include opacity(0.7); }
-}
-
-// Секция с треугольной верхушкой
-.triangle-top-section{
-	background-repeat 	: no-repeat;
-	background-position : top;
-	padding-top 		: 136px;
-}
-
-// Секция с заголовком и описанием
-.title-desk-section{
-	article:first-child{
-		p { margin : 40px 0px }
-	}
-}
-
-// ################## END section templates #################
+// Helpers
+@import "colors";
+@import "helpers";
+@import "elements";
+@import "fontsconst";
 
 // ###################################################################
 // ONE SECTION
@@ -114,11 +26,16 @@ section.section-one{
 		min-height 		: 100%;
 		height 			: auto;
 		text-align 		: left;
+		
 		h1 { margin-top: 136px; }
 		p  { margin-top: 32px; }
 	}
 
-	fieldset 	{ margin-top: 48px; }
+	fieldset {
+		margin-top: 48px;
+		
+		button { width: 49% }
+	}
 
 }
 section.section-one::after {
@@ -135,6 +52,7 @@ section.section-one::after {
 // ###################################################################
 // TWO SECTION
 section.section-two{
+	@extend .title-desk-section;
 	padding : 80px 0;
 	img{ margin : 64px 32px }
 }
@@ -143,20 +61,63 @@ section.section-two{
 // THREE SECTION
 section.section-three{
 	@extend .triangle-top-section;
+	@extend .title-desk-section;
 
 	background-image 	: url('../images/zone_white.png');	
 	background-color 	: #F5F5F7;
 	
-	img { margin : 48px; }
+	img { margin : 48px; margin-top: 0;}
 }
 
 // #############################################################
 // FOUR SECTION
 section.section-four{
+	@extend .violet-section;
+	@extend .title-desk-section;
 	@extend .triangle-top-section;
+	@extend .big-vertical-padding;
+
+	background: url('../images/zone_gray.png') top no-repeat ,
+				url('../images/inverted_zone_violet.png') bottom no-repeat ,
+				radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%,rgba(229,229,229,0.3) 100%);
+	background-size : 100%;
+
+	img { margin : 32px 0px; width: 70%; }
+}
+
+section.section-five{	
+	@extend .violet-section;
+	@extend .big-vertical-padding;
+
+	position 		 : relative; 
+	background-color : $color-violet-darker !important;
+
+	// Булыжник
+	img { position: absolute; bottom : 64%; left : -4% }
+	article , fieldset { @extend .short-artical; }
+	p { margin-top: 32px }
+	
+	fieldset {
+		width : 70%; padding-top: 64px;
+
+		input[type=text] { width : 64% }
+		button 			 { width : 23%; margin-left: 8px; }
+	}
+}
+
+footer {
 	@extend .violet-section;
 
-	background-image 	: url('../images/zone_gray.png') , radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%,rgba(229,229,229,0.3) 100%);
-	background-color 	: $color-violet;
-	image { margin : 32px 0px }
+	background-color : $color-violet-darker !important;	
+	text-align 	: center;
+
+	article:first-child {
+		a { color : $color-violet-darker; }		
+		span:last-child { margin-left: 56px }
+		span:first-child { margin-right: 56px }
+		span { @include opacity(0.7) }
+	}
+
+	article:last-child { padding: 80px 0px 128px 0px; a { @include opacity(1) } }
+
 }

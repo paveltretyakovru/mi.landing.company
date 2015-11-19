@@ -1,0 +1,40 @@
+@import "compass";
+@import "colors";
+
+// ################## Section templates #####################
+
+// Секция с фиолетовым фоном и белыми буквами
+.violet-section {
+	color 				: $color-white;
+	background-color 	: $color-violet !important;
+	
+	p , h1 , h3 { @include single-text-shadow; }
+	p { color : rgba(#fff, 0.7) }
+}
+
+// Секция с треугольной верхушкой
+.triangle-top-section{
+	background-repeat 	: no-repeat;
+	background-position : top;
+	padding-top 		: 152px;
+	background-size		: 100%;
+}
+
+// Секция с заголовком и описанием, класс создает отступы
+.title-desk-section{
+	article:first-child{
+		p { margin : 40px 0px }
+	}
+}
+
+// Устанавливает большой вертикальный отсуп в 152px
+.big-vertical-padding{
+	padding : 152px 0px;
+}
+
+
+.short-artical {
+	width 	: 48%;
+	margin 	: auto;
+}
+// ################## END section templates #################

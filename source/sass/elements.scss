@@ -1,0 +1,66 @@
+@import "colors";
+@import "fontsconst";
+
+html { font-size: 62.5% }
+html , body { height : 100%; width : 100% }
+body { font	: normal normal 300 1.25rem/1.5 $muller_light; font-size : 18px }
+
+h1 , h3 { text-transform : uppercase; letter-spacing: 3px; }
+h1 		{ font-size : 32px; }
+
+a {
+	color : $color-white;
+	text-decoration: none;
+}
+
+article , fieldset { text-align : center }
+
+.form-elements-sceleton {
+	border-radius 	: 60px;
+	width 			: 240px;
+	font-family 	: $muller_medium;
+	letter-spacing 	: 1.5px;
+	text-transform 	: uppercase;
+	background 		: none;
+	font-size 		: 10pt;
+	padding 		: 16px;
+	border 			: 1px solid $color-violet-light	;
+}
+
+// ###################################################################
+// Buttons
+.mi-button-default{
+	@extend .form-elements-sceleton;
+
+	//height 			: 48px;
+	color 			: $color-violet	;
+	cursor 			: pointer ;
+	
+	-webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) ;
+	-moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) ;
+	-o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) ;
+	transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000)
+}
+.mi-button-default:hover{ background : #9C6FE7;	color : $color-white; border : 2px solid $color-violet}
+button { @extend .mi-button-default }
+
+.button-red {
+	@extend .mi-button-default;
+	color 		 	: $color-white;
+	background-color: $color-red-orange;
+	border-bottom 	: 1px solid $color-red-orange-dark;
+}
+
+.button-white-border {
+	@extend .mi-button-default;
+	border-color 		: rgba(255, 255, 255, 0.3);
+	color 		 		: $color-white;
+	border-color 		: rgba(255, 255, 255, 0.3);
+}
+
+// ####################
+// Inputs
+input {
+	@extend .form-elements-sceleton;
+	color: rgba(255, 255, 255, 0.61);
+}
