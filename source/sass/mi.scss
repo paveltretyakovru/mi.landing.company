@@ -90,6 +90,7 @@ section.section-four{
 
 		width 		: 70%;
 		margin 		: auto;
+		word-wrap 	: break-word;
 
 		figure {
 			@include border-radius( 8px );
@@ -116,9 +117,13 @@ section.section-four{
 				width			: 75%;
 				border-bottom 	: 2px solid #DDD;
 				margin 			: auto;
-				padding 		: 8px 0;
+				padding 		: 8% 0;
 				height 			: auto;
-				min-height 		: 80px;
+				min-height 		: 80px;				
+			}
+
+			hgroup:last-child {
+				border-bottom: none
 			}
 
 			.absolute-procent{
@@ -151,8 +156,10 @@ section.section-five{
 	background-color : $color-violet-darker !important;
 
 	// Булыжник
-	p 	{ margin-top: 32px }
-	img { position: absolute; bottom : 64%; left : -4% }
+	p 		{ margin-top: 32px }
+	img 	{ position: absolute; bottom : 64%; left : -4% }
+	header  { position: relative }
+	
 	header , fieldset { @extend .short-artical; }
 	
 	fieldset {
