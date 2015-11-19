@@ -22,7 +22,7 @@
 
 // Секция с заголовком и описанием, класс создает отступы
 .title-desk-section{
-	article:first-child{
+	header {
 		p { margin : 40px 0px }
 	}
 }
@@ -32,9 +32,32 @@
 	padding : 152px 0px;
 }
 
-
 .short-artical {
 	width 	: 48%;
 	margin 	: auto;
 }
+
+.folded-corner { position: relative; }
+.folded-corner:before {
+	content : " ";
+	position: absolute;
+	top 	: 0;
+	right 	: 0;
+	border-width:0 32px 32px 0;
+	border-style:solid;
+	border-color: #fff;
+	display	: block;
+	width 	: 0;
+	@include box-shadow( 0px 1px 13px rgba(0, 0, 0, 0.3), -1px 2px 7px rgba(0, 0, 0, 0.2) );
+	@include border-bottom-left-radius(8px);
+}
+
+.text-green { color : $color-green  }
+.text-blue 	{ color : $color-blue   }
+.text-violet{ color : $color-violet }
+
+.hr-green , .hr-blue , .hr-violet { border: medium none; height: 2px; }
+.hr-green { background-color : $color-green  }
+.hr-blue  { background-color : $color-blue   }
+.hr-violet{ background-color : $color-violet }
 // ################## END section templates #################
