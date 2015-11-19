@@ -77,6 +77,7 @@ section.section-four{
 	@extend .triangle-top-section;
 	@extend .big-vertical-padding;
 
+	// Создание скошенных углов сверху и снизу, и фоновый градиент
 	background: url('../images/zone_gray.png') top no-repeat ,
 				url('../images/inverted_zone_violet.png') bottom no-repeat ,
 				radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%,rgba(229,229,229,0.3) 100%);
@@ -93,12 +94,13 @@ section.section-five{
 	background-color : $color-violet-darker !important;
 
 	// Булыжник
+	p 	{ margin-top: 32px }
 	img { position: absolute; bottom : 64%; left : -4% }
 	article , fieldset { @extend .short-artical; }
-	p { margin-top: 32px }
 	
 	fieldset {
-		width : 70%; padding-top: 64px;
+		width 		: 70%;
+		padding-top : 64px;
 
 		input[type=text] { width : 64% }
 		button 			 { width : 23%; margin-left: 8px; }
@@ -109,15 +111,23 @@ footer {
 	@extend .violet-section;
 
 	background-color : $color-violet-darker !important;	
-	text-align 	: center;
+	text-align 		 : center;
 
+	// социальные кнопки
 	article:first-child {
-		a { color : $color-violet-darker; }		
-		span:last-child { margin-left: 56px }
+		a 				 { color : $color-violet-darker }		
+		span 			 { @include opacity(0.7) }
+		span:last-child  { margin-left : 56px }
 		span:first-child { margin-right: 56px }
-		span { @include opacity(0.7) }
 	}
 
-	article:last-child { padding: 80px 0px 128px 0px; a { @include opacity(1) } }
+	// нижний копирайт
+	article:last-child {
+		padding: 80px 0px 128px 0px;
+
+		a {
+			@include opacity(1)
+		}
+	}
 
 }
