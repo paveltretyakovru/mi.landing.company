@@ -91,6 +91,9 @@ section.section-four{
 		width 		: 80%;
 		word-wrap 	: break-word;
 		display 	: inline-flex; 
+		
+		figure.folded-corner:before { @include border-top-right-radius( 8px ) }
+		figure:last-child 			{ border-bottom: 4px solid $color-violet-darker }
 
 		figure {
 			@include border-radius( 8px );
@@ -101,7 +104,7 @@ section.section-four{
 			max-width 		: 248px; 
 			margin 			: 0 auto; 
 			
-			span { font-weight : bold }
+			//span { font-weight : bold }
 
 			figcaption {
 				@include border-top-radius( 8px );
@@ -109,8 +112,10 @@ section.section-four{
 				height 		: auto;
 				background 	: $color-white;
 				box-shadow 	: 0px 0px 8px 2px rgba(0, 0, 0, 0.15);
+				font-size 	: 2vw; 
 
-				hr { width : 24% }
+				h2 { font-size 	: 2vw }
+				hr { width 		: 24% }
 			}
 
 			hgroup {
@@ -140,11 +145,6 @@ section.section-four{
 			}
 
 		}
-		figure.folded-corner:before{
-			@include border-top-right-radius( 8px )
-		}
-		// figure:first-child { margin-right: 48px }
-		figure:last-child  { border-bottom: 4px solid $color-violet-darker }
 	}
 }
 
