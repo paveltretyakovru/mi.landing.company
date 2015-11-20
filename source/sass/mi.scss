@@ -200,6 +200,8 @@ footer {
 // #############################################
 // ABOUT SECTION
 section.about {
+	display: none;
+
 	article { 
 		display 	: inline-flex;
 		word-wrap 	: break-word;
