@@ -194,3 +194,35 @@ footer {
 	}
 
 }
+
+// #############################################
+// Section about
+section.about {
+	//@include columns(2);
+
+	display 	: inline-flex;
+	word-wrap 	: break-word;
+
+	aside {
+		//display: inline-block;
+		width 	: 50%;
+	}
+
+	aside:first-child{
+		text-align 		: center;
+		background-color: $color-violet-darker;
+
+		img {
+			width 	: 32%;
+			margin 	: 14% 0;
+		}
+	}
+
+	aside:last-child {
+		padding : 0 3%;
+
+		img {
+			width: 136px
+		}
+	}
+}
