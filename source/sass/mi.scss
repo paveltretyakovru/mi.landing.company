@@ -159,7 +159,7 @@ section.section-five{
 	img 	{ position: absolute; bottom : 64%; left : -4% } // Булыжник
 	header  { position: relative }
 	
-	header , fieldset { @extend .short-artical; }
+	fieldset { @extend .short-artical; }
 	
 	fieldset {
 		width 		: 70%;
