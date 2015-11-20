@@ -54,10 +54,10 @@
 
 .text-green { color : $color-green  }
 .text-blue 	{ color : $color-blue   }
-.text-violet{ color : $color-violet }
+.text-violet{ color : $color-violet-darker }
 
 .hr-green , .hr-blue , .hr-violet { border: medium none; height: 2px; }
 .hr-green { background-color : $color-green  }
 .hr-blue  { background-color : $color-blue   }
-.hr-violet{ background-color : $color-violet }
+.hr-violet{ background-color : $color-violet-darker }
 // ################## END section templates #################

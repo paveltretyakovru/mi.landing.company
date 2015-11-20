@@ -78,16 +78,17 @@ section.section-four{
 	@extend .big-vertical-padding;
 
 	// Создание скошенных углов сверху и снизу, и фоновый градиент
-	background: url('../images/zone_gray.png') top no-repeat ,
-				url('../images/inverted_zone_violet.png') bottom no-repeat ,
+	background: url('../images/zone_gray.png') top / 100% no-repeat ,
+				url('../images/inverted_zone_violet.png') bottom / 100% no-repeat ,
+				url('../images/section_4_bg_tic.png') 50% 72% / auto auto repeat-x ,
 				radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%,rgba(229,229,229,0.3) 100%);
-	background-size : 100%;
+
 	text-align 		: center; 
 
 	img { margin : 32px 0px; width: 70%; }
 
 	article {
-		width 		: 72%;
+		width 		: 80%;
 		word-wrap 	: break-word;
 		display 	: inline-flex; 
 
@@ -97,6 +98,7 @@ section.section-four{
 			box-shadow 		: 0px 0px 16px 2px rgba(0, 0, 0, 0.1);
 			color 			: $color-gray-dirty;
 			width 			: 30%;
+			max-width 		: 248px; 
 			margin 			: 0 auto; 
 			
 			span { font-weight : bold }
@@ -125,16 +127,16 @@ section.section-four{
 			}
 
 			.absolute-procent{
-				position: absolute;
-				right: 4px;
-				top: 12px;
-				background-color: rgb(23, 21, 21);
-				padding: 0px;
-				margin: 0px;
-				line-height: 0;
-				color: rgb(125, 89, 185);
+				position 	: absolute;
+				right 		: 4px;
+				top 		: 12px;
+				padding 	: 0px;
+				margin 		: 0px;
+				line-height : 0;
+				color 		: $color-violet-darker;
 				font-weight	: bold;
 				font-size	: 16px;
+				background-color: rgb(23, 21, 21);
 			}
 
 		}
@@ -142,7 +144,7 @@ section.section-four{
 			@include border-top-right-radius( 8px )
 		}
 		// figure:first-child { margin-right: 48px }
-		// figure:last-child  { margin-left : 48px }
+		figure:last-child  { border-bottom: 4px solid $color-violet-darker }
 	}
 }
 
