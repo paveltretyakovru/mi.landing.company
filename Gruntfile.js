@@ -4,6 +4,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg     : grunt.file.readJSON('package.json') ,
 
+    browserify : {
+      main : {
+
+        options : {
+          browserifyOptions : {
+            debug : true
+          }
+        } ,
+        
+        src     : 'public/js/app.js' ,
+        dest    : 'public/js/bundle.js' 
+      }
+    } ,
+
     connect: {
       server: {
         options: {
@@ -44,9 +58,15 @@ module.exports = function(grunt) {
     },
 
     watch : {
+      
+      //browserify : {
+        //files : 'public/js/app/**/*.js' ,
+        //tasks : ['browserify']
+      //} ,
+
       coffee : {
         files : 'source/coffee/**/*.coffee' ,
-        tasks : ['coffee']
+        tasks : ['coffee' , 'browserify']
       } ,
 
       haml  : {
@@ -82,7 +102,7 @@ module.exports = function(grunt) {
         expand  : true            , 
         cwd     : 'source/coffee' ,
         src     : '**/*.coffee'   ,
-        dest    : 'public'           ,
+        dest    : 'public/js'     ,
         ext     : '.js'
       }
     } ,
@@ -118,8 +138,8 @@ module.exports = function(grunt) {
     destfile        = destfile.replace(  replace , root );
     file[destfile]  = filepath;
 
-    console.log('Parts: ' , replace , root);
-    console.log('Compile file ' + filepath + ' to ' + destfile );
+    console.log( 'Parts: ' , replace , root);
+    console.log( 'Compile file ' + filepath + ' to ' + destfile );
     
     grunt.config('haml.watch.files', file);
   });
@@ -130,7 +150,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-compass' );
   grunt.loadNpmTasks( 'grunt-contrib-sass'    );
   grunt.loadNpmTasks( 'grunt-contrib-connect' );
+  grunt.loadNpmTasks( 'grunt-browserify'      );
   
-  grunt.registerTask( 'default', [ 'connect' , 'haml' , 'sass' , 'coffee' , 'watch'] );
+  grunt.registerTask( 'default', [ 'connect' , 'haml' , 'sass' , 'coffee' , 'browserify' , 'watch' ] );
 
 };

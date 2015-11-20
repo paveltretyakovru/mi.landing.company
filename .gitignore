@@ -1,5 +1,6 @@
 /node_modules
 /public/css
 /public/*.html
+/public/js
 .sass-cache
 *.sublime-project

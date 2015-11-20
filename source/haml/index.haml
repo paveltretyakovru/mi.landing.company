@@ -34,7 +34,7 @@
 				%img{ :src => "images/section_2_img_3.png" }		
 			
 				%fieldset
-					%button Подробнее
+					%button.js-button-show-about Подробнее
 
 		-# ==================================================
 
@@ -174,9 +174,11 @@
 					%span.fa-stack.fa-lg
 						%i.fa.fa-circle.fa-stack-2x.fa-inverse
 						%i.fa.fa-linkedin.fa-stack-1x
-			
+
 			%article
 				%p Mimicra™ 2015
 				%p
 					Сделано в
 					%a{ :href => "#" } cpdbbk.com
+
+		%script{ :src => "js/bundle.js" }
