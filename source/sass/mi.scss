@@ -102,9 +102,7 @@ section.section-four{
 			color 			: $color-gray-dirty;
 			width 			: 30%;
 			max-width 		: 248px; 
-			margin 			: 0 auto; 
-			
-			//span { font-weight : bold }
+			margin 			: 0 auto;
 
 			figcaption {
 				@include border-top-radius( 8px );
@@ -131,7 +129,7 @@ section.section-four{
 				border-bottom: none
 			}
 
-			.absolute-procent{
+			.absolute-procent {
 				position 	: absolute;
 				right 		: 4px;
 				top 		: 12px;
@@ -148,6 +146,8 @@ section.section-four{
 	}
 }
 
+// #############################################################
+// FIVE SECTION
 section.section-five{	
 	@extend .violet-section;
 	@extend .big-vertical-padding;
@@ -170,6 +170,8 @@ section.section-five{
 	}
 }
 
+// #############################################################
+// FOOTER
 footer {
 	@extend .violet-section;
 
@@ -196,7 +198,7 @@ footer {
 }
 
 // #############################################
-// Section about
+// ABOUT SECTION
 section.about {
 	article { 
 		display 	: inline-flex;
@@ -206,7 +208,8 @@ section.about {
 		aside:first-child{
 			width 			: 40%;
 			text-align 		: center;
-			background-color: $color-violet-darker;
+			background-color: $color-violet;
+			background-image: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%,rgba(229,229,229,0.3) 100%);
 
 			img { width : 50%; margin : 25% 0; }
 		}
@@ -216,7 +219,7 @@ section.about {
 			padding 	: 0 3%;
 			text-align 	: left;
 
-			img { width: 136px };
+			img { width : 136px };
 		}
 	}
 }
