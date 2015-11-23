@@ -47,10 +47,10 @@ module.exports = ( grunt ) ->
 
 				files 	: [
 					expand	:  true
-					cwd		: 'source/sass'	# From folder
-					src 	: ['**/*.scss']	# Scan all directories
-					dest 	: 'public/css'	# To folder
-					ext 	: '.css'		# New file extension
+					cwd		: 'source/sass'					# From folder
+					src 	: ['**/*.scss' , '**/*.sass']	# Scan all directories
+					dest 	: 'public/css'					# To folder
+					ext 	: '.css'						# New file extension
 				]
 
 		watch :
@@ -61,7 +61,7 @@ module.exports = ( grunt ) ->
 				files : [ 'source/cjs/**/*.cjs' ]
 				tasks : [ 'transpile:init' , 'browserify:init' ]
 			sass :
-				files : [ 'source/sass/**/*.scss' ]
+				files : [ 'source/sass/**/*.scss' , 'source/sass/**/*.sass' ]
 				tasks : [ 'sass:init' ]
 			coffee :
 				files : [ 'source/coffee/**/*.coffee' ]
