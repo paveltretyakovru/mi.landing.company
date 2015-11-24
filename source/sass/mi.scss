@@ -32,8 +32,10 @@ section.section-one{
 
 	fieldset {
 		margin-top: 48px;
+		text-align: center;
 		
-		button { width: 49% }
+		button 				{ width: 40% }
+		button:last-child 	{ margin-left : 16px }
 	}
 
 }
