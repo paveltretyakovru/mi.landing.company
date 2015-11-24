@@ -78,5 +78,5 @@ module.exports = ( grunt ) ->
 
 	# Registering tasks	
 	# Create new task -> "init", it's started created tasks -> "haml":grunt-haml2html with parameters from atribute "init"(grun.innitConfig({})
-	grunt.registerTask 'init' 	, [ 'haml:init' , 'transpile:init' , 'browserify:init' , 'sass:init' , 'coffee:init']
+	grunt.registerTask 'init' 	, [ 'haml:init' , 'transpile:init' , 'browserify:init' , 'sass:init' , 'coffee:init' ]
 	grunt.registerTask 'serve'	, [ 'connect' , 'watch' ]
