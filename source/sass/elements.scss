@@ -3,12 +3,15 @@
 
 html { font-size: 62.5% }
 html , body { height : 100%; width : 100% }
-body { font	: normal normal 300 1.25rem/1.5 $muller_regular; font-size : 18px }
+body { font	: normal normal 300 1.25rem/1.5 $muller_light; font-size : 18px }
 
 h1 , h3 { text-transform : uppercase; letter-spacing: 3px; }
 h2 , h4 { color : $color-gray-dirty }
 
-h1 { font-size : 32px; }
+h1 {
+	font-size 	: 32px;
+	font-family	: $muller_regular;
+}
 h2 { 
 	font-family 	: $muller_regular;
 	font-size 		: 24px;
