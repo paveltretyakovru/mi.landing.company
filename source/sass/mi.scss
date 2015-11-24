@@ -32,21 +32,27 @@ section.section-one{
 
 	fieldset {
 		margin-top: 48px;
-		text-align: center;
+		text-align: left;
 		
 		button 				{ width: 40% }
 		button:last-child 	{ margin-left : 16px }
 	}
 
 	footer {
-		height 				: 64px;
+		height 				: 96px;
 		background-color	: #fff;
 
 		@include opacity(0.2);
 
-		img {
-			height 		: 100%;
-			margin-left	: 5%
+		ul {
+			padding: 16px;
+			li {
+				width 		: 16%;
+				display 	: inline-block;
+				text-align	: center;
+				
+				img { height : 64px; }
+			}
 		}
 	}
 
